@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.example.skywlk.myapplication.MainActivity">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Cm / In"
+            android:id="@+id/textCmIn" android:layout_alignParentTop="false" android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false" android:layout_marginTop="50dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/editCm"
+            android:hint="0.00"
+            android:layout_alignParentTop="false"
+            android:layout_marginTop="40dp" android:layout_marginLeft="90dp" android:layout_marginRight="200dp"
+            android:textAlignment="viewEnd"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="g / oz"
+            android:id="@+id/textGoz"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false" android:layout_marginTop="125dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/editG"
+            android:hint="0.00"
+            android:textAlignment="viewEnd"
+            android:layout_marginLeft="90dp" android:layout_marginTop="115dp" android:layout_marginRight="200dp"/>
+
+
+    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:inputType="numberDecimal"
+              android:ems="10"
+              android:id="@+id/editIn"
+              android:text="--"
+              android:layout_marginLeft="78dp"
+              android:textAlignment="viewEnd"
+              android:layout_alignTop="@+id/editCm" android:layout_toRightOf="@+id/editL"
+              android:layout_toEndOf="@+id/editL" android:layout_marginStart="78dp"/>
+    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:inputType="numberDecimal"
+              android:ems="10"
+              android:id="@+id/editOz"
+              android:text="--"
+              android:textAlignment="viewEnd"
+              android:layout_alignTop="@+id/editG" android:layout_alignLeft="@+id/editIn"
+              android:layout_alignStart="@+id/editIn"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="L / US gal"
+            android:id="@+id/textLusgal"
+            android:layout_marginTop="200dp"
+    />
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editL"
+            android:hint="0.00"
+            android:textAlignment="viewEnd"
+            android:layout_marginTop="190dp" android:layout_alignRight="@+id/editG"
+            android:layout_alignEnd="@+id/editG" android:layout_alignLeft="@+id/editG"
+            android:layout_alignStart="@+id/editG"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editUSgal"
+            android:text="--"
+            android:textAlignment="viewEnd" android:layout_alignTop="@+id/editL" android:layout_alignRight="@+id/editOz"
+            android:layout_alignEnd="@+id/editOz"/>
+</RelativeLayout>
