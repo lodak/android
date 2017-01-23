@@ -15,6 +15,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -43,20 +44,14 @@ public class StatusActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
 
-
         barChart = (BarChart) findViewById(R.id.barGraph);
 
-        final ArrayList<String> usernames = new ArrayList<String>();
 
-        final ArrayList<String> joblist = new ArrayList<String>();
+        final ArrayList<String> joblist = new ArrayList<>();
+        final ArrayList<String> users = new ArrayList<>();
 
-
-        final ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, joblist);
-        final ListView jobsListView = (ListView) findViewById(R.id.jobsListView);
-
-
-        final List<BarEntry> entries = new ArrayList<>();
-        List<BarEntry> yaxis = new ArrayList<>();
+        ArrayList<BarEntry> barEntries = new ArrayList<>();
+        ArrayList<String> theUsers = new ArrayList<>();
 
         ParseQuery<ParseUser> query = ParseUser.getQuery();
 
@@ -70,7 +65,7 @@ public class StatusActivity extends AppCompatActivity {
 
                         for (ParseUser user : objects) {
 
-                            usernames.add(user.getUsername());
+                            users.add(user.getUsername());
 
                         }
                     }
@@ -84,9 +79,7 @@ public class StatusActivity extends AppCompatActivity {
         });
 
         ParseQuery<ParseObject> query1 = ParseQuery.getQuery("JobDone");
-
         query1.addAscendingOrder("username");
-
         query1.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
@@ -97,11 +90,8 @@ public class StatusActivity extends AppCompatActivity {
                         for (ParseObject object : objects) {
 
                             joblist.add(object.getString("username"));
-                            //Log.i("user", )
 
                         }
-
-                        jobsListView.setAdapter(arrayAdapter);
 
                     }
 
@@ -113,105 +103,39 @@ public class StatusActivity extends AppCompatActivity {
             }
         });
 
-        List<Float> yValues = new ArrayList<Float>();
 
-        for(int i=0; i<usernames.size(); i++){
+        for(int k=0; k<users.size(); k++){
 
-            float count = 0;
+            theUsers.add(users.get(k).toString());
+
+        }
+
+        for(int i=0; i<users.size(); i++){
+            float x = 0;
 
             for (int j=0; j<joblist.size(); j++){
 
-                if(usernames.get(i) == joblist.get(j)){
-
-                    count++;
-
+                if(users.get(i).toString() == joblist.get(j).toString()){
+                    x++;
                 }
 
             }
 
-            yValues.add(count);
-
-            for(int k=0; k<yValues.size(); k++){
-
-                Toast.makeText(getApplicationContext(), "user count: " + yValues.get(k).toString(), Toast.LENGTH_LONG).show();
-            }
-
+            barEntries.add(new BarEntry(x, i));
         }
 
+        BarDataSet barDataSet = new BarDataSet(barEntries, "values");
 
+        BarData barData = new BarData(theUsers, barDataSet);
+
+        barChart.setDescription("Jobs done per user.");
+
+        barChart.setData(barData);
+
+        barChart.setTouchEnabled(true);
+        barChart.setDragEnabled(true);
+        barChart.setScaleEnabled(true);
+        barChart.invalidate();
 
     }
-
-    private void drawBarChart(float yValues[], String [] xValues){
-        //barChart.setDescription("Jobs done per user");
-        ArrayList<BarEntry> yData = new ArrayList<>();
-        for(int i=0; i < yValues.length; i++){
-
-            yData.add(new BarEntry(yValues[i], i));
-
-        }
-
-        ArrayList<String> xData = new ArrayList<>();
-        for(int i=0; i<xValues.length; i++){
-
-            xData.add(xValues[i]);
-        }
-
-        BarDataSet barDataSet = new BarDataSet(yData, "Jobs done per user");
-        barDataSet.setColor(ColorTemplate.COLOR_NONE);
-
-       // BarData barData = new BarData(xData, barDataSet)
-
-
-
-    }
-
-
 }
-
-
-   /* private void setChartData(LinkedHashMap<String, Integer> jobsDonePerUser){
-
-        ArrayList<String> xVals = new ArrayList<>();
-
-        for(LinkedHashMap.Entry<String, Integer> entry : jobsDonePerUser.entrySet()){
-
-            xVals.add(entry.getKey());
-
-        }
-
-        ArrayList<Entry> vals1 = new ArrayList<>();
-        int i=0;
-
-        for (Map.Entry<String, Integer> entry : jobsDonePerUser.entrySet()){
-
-            vals1.add(new Entry(Float.valueOf(entry.getValue()), i));
-
-            i++;
-
-        }
-
-        //dataset for barChart
-        BarDataSet barDataSet = new BarDataSet(vals1, "users");
-
-
-    }
-*/
-
-
-/*
-    LinkedHashMap<String, Integer> count = new LinkedHashMap<>();
-       for (String t : joblist) {
-
-        Integer i = count.get(t);
-
-        Toast.makeText(getApplicationContext(), "t: " + count.get(t), Toast.LENGTH_LONG).show();
-
-        if (i == null) {
-        i = 0;
-        Log.i("Score: ", String.valueOf(i + 1));
-        }
-        count.put(t, i + 1);
-
-        }
-*/

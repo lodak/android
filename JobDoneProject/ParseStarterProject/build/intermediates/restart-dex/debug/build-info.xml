@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="arm64-v8a,armeabi-v7a,armeabi"
-    api-level="23"
-    density="xxhdpi"
+    abi="x86"
+    api-level="24"
+    density="420dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="265225474427580"
-    token="5478449706488554032"
-    verifier="FULL_BUILD_REQUESTED" >
+    timestamp="278844586322973"
+    token="1289678677622400897"
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1560" />
+        duration="516" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="573" />
+        duration="53" />
     <task
         name="verifier"
-        duration="153" />
+        duration="2" />
 
     <artifact
-        location="D:\JobDoneProject\ParseStarterProject\build\outputs\apk\ParseStarterProject-debug.apk"
-        type="MAIN" />
+        location="D:\JobDoneProject\ParseStarterProject\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="265225474427580"
+        timestamp="278498301104582"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\JobDoneProject\ParseStarterProject\build\outputs\apk\ParseStarterProject-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="278844586322973"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\JobDoneProject\ParseStarterProject\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

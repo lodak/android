@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="9432e96948bf5bf4c725220b76e6e6f4d7aed804">
+        sha1="c017432c1146820f49f527d1c5abaabfb7d9c931">
         <dex dex="D:\JobDoneProject\ParseStarterProject\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_d4a37e1fe87985f63bdc46f48adea2fc029d3c28\classes.dex" />
     </item>
     <item
@@ -90,6 +90,15 @@
         revision="23.0.2"
         sha1="c8f5d56f8f8a287c95e02c542baade138a378048">
         <dex dex="D:\JobDoneProject\ParseStarterProject\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-9.4.0_be26a8d3eea9daf71bb5f27361b0d56f022a7ea7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\skywlk\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v2.2.4\7abd1ecef320da6a7679b137083151401fe8bf43\MPAndroidChart-v2.2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="7abd1ecef320da6a7679b137083151401fe8bf43">
+        <dex dex="D:\JobDoneProject\ParseStarterProject\build\intermediates\transforms\dex\debug\folders\1000\10\MPAndroidChart-v2.2.4_fd6ee1adde06db00865fcffd596e453d598c5099\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -327,15 +336,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\skywlk\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.1\369f9aa48a629b4e92557b37326f42dc3de796e4\MPAndroidChart-v3.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="369f9aa48a629b4e92557b37326f42dc3de796e4">
-        <dex dex="D:\JobDoneProject\ParseStarterProject\build\intermediates\transforms\dex\debug\folders\1000\10\MPAndroidChart-v3.0.1_ac69494f0ffc1a80f1743dd51495d56b1aa0b526\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\JobDoneProject\ParseStarterProject\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\9.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -475,7 +475,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="f84533fd8fdf196923f1c4baf0ba0afcd65d8ca8">
+        sha1="f7158eb88af1349ffe961a407950e35ba9412aef">
         <dex dex="D:\JobDoneProject\ParseStarterProject\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_86f4a17b62937661a858bd12090f482164386932\classes.dex" />
     </item>
     <item
